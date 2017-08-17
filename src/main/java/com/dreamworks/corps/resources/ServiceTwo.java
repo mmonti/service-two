@@ -17,6 +17,7 @@ public class ServiceTwo {
     @RequestMapping(value = "/service/two/{name}", method = RequestMethod.GET)
     public ResponseEntity sample(@PathVariable String name) {
         return ResponseEntity.ok(new HashMap(){{
+            put("service", ServiceTwo.class.getCanonicalName());
             put("name", name);
         }});
     }
